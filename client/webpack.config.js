@@ -12,6 +12,7 @@ module.exports = () => {
     entry: {
       main: './src/js/index.js',
       install: './src/js/install.js',
+      database: './src/js/database.js'
     },
     output: {
       filename: '[name].bundle.js',
@@ -20,14 +21,16 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'Webpack Plugin',
+        title: 'JATE',
       }),
       new WebpackPwaManifest({
-        name: 'JATE',
-        short_name: 'JT',
-        description: 'Text Editor!',
-        background_color: '#7eb4e2',
-        theme_color: '#7eb4e2',
+        fingerprints: false,
+        inject: true,
+        name: 'just another text editor',
+        short_name: 'jATE',
+        description: 'keep notes and code updates in once place',
+        background_color: '#225ca3',
+        theme_color: '#225ca3',
         start_url: './',
         publicPath: './',
         icons: [
