@@ -24,11 +24,7 @@ export const putDb = async (content) => {
 
   const request = store.put({ jate: content });
   const result = await request;
-  console.log('result.value', result);
-  result
-    ? console.log('Data retrieved from database')
-    : console.error('putDb not implemented');
-  return result;
+  console.log('🚀 - data saved to the database', result);
 };
 
 // TODO: Add logic for a method that gets all the content from the database
@@ -50,10 +46,7 @@ export const getDb = async () => {
   // Get confirmation of the request.
   const result = await request;
   console.log('result.value', result);
-  result
-    ? console.log('Data retrieved from database')
-    : console.error('getDb not implemented');
-  return result?.value;
-}
+  return result;
+};
 
 initdb();
